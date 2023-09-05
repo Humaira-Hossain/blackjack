@@ -9,6 +9,7 @@ let cardsEl = document.getElementById("cards-el")
 
 function startGame() {
   isAlive = true
+  hasBlackJack = false
   let firstCard = getRandomCard()
   let secondCard = getRandomCard()
   cards = [firstCard, secondCard]
@@ -36,8 +37,8 @@ function renderGame() {
   }
 }
 
-function newCard() {
-  if (isAlive && !hasBlackJack) {
+function drawCard() {
+  if (isAlive === true && hasBlackJack === false) {
       let card = getRandomCard()
       sum += card
       cards.push(card)
